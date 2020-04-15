@@ -1,0 +1,11 @@
+@import './src/styles/colors';
+
+.hello-world {
+  max-width: 200px;
+  margin: 0 auto;
+
+  &__user-name{
+    color: $user-name-color;
+  }
+
+}
