@@ -1,11 +1,11 @@
-
+//for pull request
+//1
 import React, { useState, useEffect } from 'react';
 
 const Timer = () => {
     const [seconds, setSeconds] = useState(0);
     const [minutes, setMinutes] = useState(0);
     const [isActive, setIsActive] = useState(false);
-
 
     function toggle() {
         setIsActive(!isActive);
