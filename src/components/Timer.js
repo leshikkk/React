@@ -1,5 +1,5 @@
 //for pull request
-//1
+
 import React, { useState, useEffect } from 'react';
 
 const Timer = () => {
@@ -7,9 +7,11 @@ const Timer = () => {
     const [minutes, setMinutes] = useState(0);
     const [isActive, setIsActive] = useState(false);
 
+
     function toggle() {
         setIsActive(!isActive);
     }
+
 
     function reset() {
         setSeconds(0);
@@ -17,8 +19,10 @@ const Timer = () => {
         setIsActive(false);
     }
 
+
     useEffect(() => {
         let interval = null;
+
         if (isActive) {
             interval = setInterval(() => {
                 setSeconds(seconds => seconds + 1);
@@ -30,12 +34,12 @@ const Timer = () => {
         } else if (!isActive && seconds !== 0) {
             clearInterval(interval);
         }
+
         return () => clearInterval(interval);
     }, [isActive, seconds, minutes]);
 
     return (
        <>
-
                 <button  onClick={toggle}>
                     {isActive ? 'Pause' : 'Start'}
                 </button>
@@ -46,7 +50,6 @@ const Timer = () => {
                     Reset
                 </button>
         </>
-
     );
 };
 
